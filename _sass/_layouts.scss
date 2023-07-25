@@ -1,0 +1,295 @@
+// Layouts
+// ================================================================
+
+.masthead {
+    background: color('light');
+    display: none;
+
+    @include breakpoint(769px up) {
+        display: block;
+    }
+    .container {
+        font-weight: bold;
+        padding: 10px 0 15px;
+        text-align: center;
+    }
+}
+.banner {
+    background: color('light');
+
+    .container {
+        padding-top: 7px;
+        padding-bottom: 7px;
+        text-align: center;
+
+        .button {
+            font-size: 16px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        p {
+            display: inline-block;
+            font-size: 16px;
+            margin: 0 0 7px;
+        }
+        a.button {
+            display: inline-block;
+            margin-left: 10px;
+        }
+    }
+}
+
+header {
+    position: relative;
+
+    .main-header {
+        display: none;
+
+        @include breakpoint(769px up) {
+            display: block;
+        }
+        .container {
+            display: block;
+
+            @include breakpoint(769px up) {
+                align-items: center;
+                display: flex;
+            }
+            .logo {
+                display: none;
+                text-align: center;
+                width: 100%;
+
+                @include breakpoint(769px up) {
+                    display: block;
+                    width: auto;
+                }
+
+                a {
+                    img {
+                        max-width: 200px;
+                    }
+                }
+            }
+
+            .menu {
+                display: none;
+
+                @include breakpoint(769px up) {
+                    display: flex;
+                    flex-grow: 2;
+                }
+                nav {
+                    width: 100%;
+
+                    ul {
+                        float: right;
+                        padding: 0;
+                        position: relative;
+
+                        li {
+                            text-align: center;
+                            display: inline-block;
+                            position: relative;
+
+                            &:not(:first-child) {
+                                margin: 0 0 0 10px;
+                            }
+                            &:hover {
+                                a {
+                                    color: color(two);
+                                }
+                            }
+                            a {
+                                color: color('one');
+                                display: block;
+                                font-weight: bold;
+                                padding: 40px 5px;
+                                text-transform: uppercase;
+
+                                i.fa {
+                                    width: 100%;
+                                    margin: 0 0 5px 0;
+                                }
+                            }
+
+                            // Dropdown
+                            ul.dropdown {
+                                background: color('one');
+                                box-shadow: 4px 4px 6px transparentize(black, 0.95);
+                                display: none;
+                                margin: 0; // The differential of li padding and dropdown li padding
+                                max-width: 250px;
+                                position: absolute;
+                                left: 0;
+                                width: 250px;
+                                z-index: 9;
+
+                                li {
+                                    text-align: left;
+                                    margin: 0;
+                                    display: block;
+                                    position: relative;
+
+                                    @include transition(0.06s);
+
+                                    &:hover {
+                                        background: color('two');
+                                    }
+
+                                    &:not(:last-child) {
+                                        // border-bottom: 1px solid transparentize(white, 0.95);
+                                    }
+
+                                    a {
+                                        color: white;
+                                        font-size: 16px;
+                                        padding: 10px 15px; // See dropdown margin
+                                        display: block;
+                                    }
+
+                                    // Dropdown
+                                    ul.dropdown {
+                                        top: 0;
+                                        left: 100%;
+                                        margin: 0;
+                                        display: none;
+                                    }
+                                }
+                            }
+                            &:last-child {
+                                ul.dropdown {
+                                    // If there is a dropdown on the last element, set it to align right rather than left
+                                    left: unset;
+                                    right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#error {
+    background: url('../images/pattern.jpg') center repeat;
+
+    .container {
+        article {
+            width: 100%;
+            text-align: center;
+            margin: 0 auto;
+
+            img {
+                max-width: 220px;
+                margin: 0 auto 20px;
+            }
+
+            p {
+                color: white;
+            }
+        }
+    }
+}
+
+#front {
+    position: relative;
+}
+
+#archive,
+#index,
+#search {
+    padding: 0 40px;
+
+    @include breakpoint(769px down) {
+        padding: 0 20px;
+    }
+    .post-container {
+        display: block;
+
+        @include breakpoint(769px up) {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+        }
+    }
+}
+section.footer-cta {
+    background-color: color(light);
+
+    .container {
+        text-align: center;
+    }
+}
+footer {
+    background: color(dark);
+
+    .container {
+        align-items: stretch;
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 60px;
+        padding-bottom: 60px;
+
+        aside {
+            flex: 100%;
+            text-align: center;
+
+            @include breakpoint(769px up) {
+                flex: 50%;
+                text-align: left;
+            }
+            .footer-logo {
+                margin-bottom: 30px;
+            }
+        }
+        section {
+            flex: 100%;
+            text-align: center;
+
+            @include breakpoint(769px up) {
+                flex: 50%;
+                text-align: right;
+            }
+            a {
+                color: white;
+            }
+            .footer-menu {
+                margin-top: 20px;
+
+                ul {
+                    li {
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .copyright {
+        padding: 0 0 15px;
+
+        .container {
+            padding-top: 0;
+            padding-bottom: 0;
+
+            p {
+                color: white;
+                font-size: 16px;
+                margin: 0 auto;
+                text-align: center;
+                width: 100%;
+
+                a {
+                    color: color(two);
+                    font-weight: 700;
+                    transition: color 0.2s;
+
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

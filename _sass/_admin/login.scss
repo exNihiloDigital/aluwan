@@ -1,0 +1,44 @@
+@import '../utilities';
+@import '../colors';
+
+// Login & Register
+// ================================================================
+
+body.login {
+    background: url('../../images/login.jpg') #242424;
+    background-position: center;
+    background-size: cover;
+
+    div#login {
+        h1 a {
+            background: url('../../images/logo.png') center no-repeat;
+            width: 100%;
+        }
+
+        form#loginform {
+            border-radius: 3px;
+            box-shadow: none !important;
+            padding: 24px;
+
+            p label {
+                color: color('dark');
+                font-weight: 400;
+            }
+
+            input {
+                border: none;
+            }
+        }
+
+        p {
+            &#nav a,
+            &#backtoblog a {
+                color: white;
+
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+    }
+}

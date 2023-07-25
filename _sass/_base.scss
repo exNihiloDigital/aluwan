@@ -1,0 +1,52 @@
+// Fonts
+// ================================================================
+
+$fonts: (
+    body: #{'Open Sans',
+    Helvetica,
+    Arial,
+    sans-serif},
+    heading: #{'Montserrat',
+    sans-serif},
+);
+
+*,
+*:focus {
+    box-sizing: border-box;
+}
+img {
+    height: auto;
+    max-width: 100%;
+    width: auto;
+
+    &.alignright {
+        float: right;
+        margin: 0 0 20px 20px;
+    }
+
+    &.alignleft {
+        float: left;
+        margin: 0 20px 20px 0;
+    }
+
+    &.aligncenter {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+body {
+    background: white;
+    color: color(dark);
+    font-family: font(body);
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.5;
+}
+
+button,
+.button {
+    @extend %button;
+}

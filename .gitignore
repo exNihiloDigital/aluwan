@@ -1,0 +1,49 @@
+# ------------------------------------------------------------------------
+# This file specifies intentionally untracked files that Git should ignore
+# - https://git-scm.com/docs/gitignore
+# ------------------------------------------------------------------------
+
+# Numerous always-ignore extensions
+*.bak
+*.cvs
+*.db
+*.diff
+*.err
+*.log
+*.orig
+*.rej
+*.zip
+
+# Ignore all files and directories starting with . or ~ or ._ or ending with ~
+.*
+~*
+*~
+._*
+# but track
+!.babelrc
+!.browserslistrc
+!.editorconfig
+!.gitattributes
+!.github
+!.gitignore
+!.jscsrc
+!.jshintignore
+!.prettierignore
+!.prettierrc
+!.travis.yml
+
+# Ignore all files with .lock extentions
+*.lock
+
+# Dependencies
+bower_components
+node_modules
+vendor
+
+# custom folders
+/assets
+/includes
+
+# function.php files
+/*.php
+!/functions.php
