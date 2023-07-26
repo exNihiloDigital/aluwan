@@ -8,39 +8,39 @@ $heading: (
     color: (
         'h1': color(dark),
         'h2': color(dark),
-        'h3': color(three),
+        'h3': color(dark),
         'h4': color(dark),
         'h5': color(dark),
         'h6': color(dark),
     ),
     desktop: (
-        'h1': 80px,
-        'h2': 60px,
-        'h3': 50px,
-        'h4': 30px,
-        'h5': 25px,
-        'h6': 20px,
+        'h1': 58px,
+        'h2': 45px,
+        'h3': 36px,
+        'h4': 28px,
+        'h5': 22px,
+        'h6': 17px,
     ),
     tablet: (
-        'h1': 70px,
-        'h2': 50px,
-        'h3': 40px,
-        'h4': 35px,
+        'h1': 58px,
+        'h2': 45px,
+        'h3': 36px,
+        'h4': 28px,
         'h5': 22px,
-        'h6': 20px,
+        'h6': 17px,
     ),
     mobile: (
-        'h1': 60px,
-        'h2': 40px,
-        'h3': 30px,
-        'h4': 25px,
-        'h5': 20px,
-        'h6': 16px,
+        'h1': 45px,
+        'h2': 36px,
+        'h3': 28px,
+        'h4': 22px,
+        'h5': 17px,
+        'h6': 14px,
     ),
     font-family: (
         'h1': font('heading'),
         'h2': font('heading'),
-        'h3': font('body'),
+        'h3': font('heading'),
         'h4': font('heading'),
         'h5': font('heading'),
         'h6': font('heading'),
@@ -64,12 +64,12 @@ $heading: (
     line-height: 1.1,
     letter-spacing: 0,
     margin-bottom: (
-        'h1': 15px,
-        'h2': 15px,
-        'h3': 15px,
-        'h4': 15px,
-        'h5': 15px,
-        'h6': 15px,
+        'h1': 37px,
+        'h2': 32px,
+        'h3': 27px,
+        'h4': 23px,
+        'h5': 20px,
+        'h6': 17px,
     ),
     text-transform: (
         'h1': none,
@@ -120,7 +120,7 @@ a {
     transition: color 0.2s;
 
     &:hover {
-        color: color('two');
+        color: color(three);
     }
 }
 

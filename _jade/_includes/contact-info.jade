@@ -1,4 +1,4 @@
-aside.contact-info
+.contact-info
 	- if(get_field('phone_number', 'options')) :
 		- $phone_raw = get_field('phone_number', 'options')
 		- $phone = str_replace([" ", "(", ")", "-"], "", $phone_raw)

@@ -1,0 +1,20 @@
+- $header = get_sub_field('header')
+- $content = get_sub_field('content')
+- $gallery = get_sub_field('gallery')
+
+section.flex-block.flex-gallery-grid.hrz-padding.bg-color-dark
+	.container.content-block
+		- if($header) :
+			h2: - echo $header
+		- endif
+
+		- if($content) : 
+			- echo $content
+		- endif
+
+		- if (have_rows('gallery')) :
+			.gallery-grid
+				- while (have_rows('gallery')) : the_row()
+					.gallery-img(aria-label="<?= get_sub_field('image')['alt']?>" style="background-image:url('<?= get_sub_field('image')['url']?>'); height: 400px;")
+				- endwhile
+		- endif

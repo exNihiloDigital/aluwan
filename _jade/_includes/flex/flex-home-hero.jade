@@ -1,0 +1,23 @@
+- $slider_carousel = get_sub_field('slider_or_carousel')
+
+section.flex-block.flex-home-hero
+	- if (have_rows('hero_slider')) :
+		.swiper.home-hero-slider
+			.swiper-wrapper
+				- while (have_rows('hero_slider')) : the_row()
+					.swiper-slide(style="background-image: url('<?= get_sub_field('hero_image')['url']; ?>');")
+						.slide-content
+							h2: - echo get_sub_field('hero_title')
+							p: - echo get_sub_field('hero_subtitle')
+							- if(get_sub_field('hero_button')):
+								a.button.button-slide(
+									href="<?= get_sub_field('hero_button')['url'];?>" 
+									target="get_sub_field('hero_button')['target']" 
+									aria-label="Hero Button <?= get_sub_field('hero_button')['title']; ?>"
+								)
+									- echo get_sub_field('hero_button')['title']
+							- endif
+				- endwhile
+			//- .swiper-button-prev
+			//- .swiper-button-next
+	- endif

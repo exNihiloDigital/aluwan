@@ -13,23 +13,28 @@
         - flexTestimonialSlider()
         - flexFeaturedContentSlider()
         - flexTestimonialCards()
+        - flexHomeHero()
+        - flexContentTwoCol()
+        - flexGalleryGrid()
+        - flexGalleryCarousel()
+        - flexDarkCTA()
     - endwhile
 - endif
 
 - function flexContent() {
-    - if ( 'content' === get_row_layout() ) :;
+    - if ( 'content_block' === get_row_layout() ) :;
         - get_template_part( 'includes/flex/flex', 'content');
     - endif;
 - }
 
 - function flexContentAndImage() {
-    - if ( 'content_and_image' === get_row_layout() ) :;
+    - if ( 'content_and_image_block' === get_row_layout() ) :;
         - get_template_part( 'includes/flex/flex', 'content-image' );
     - endif;
 - }
 
 - function flexAccordion() {
-    - if ( 'accordion' === get_row_layout() ) :;
+    - if ( 'accordion_block' === get_row_layout() ) :;
         - get_template_part( 'includes/flex/flex', 'accordion' );
     - endif;
 - }
@@ -77,7 +82,7 @@
 - }
 
 - function flexTestimonialSlider() {
-    - if ( 'testimonial_slider' === get_row_layout() ) :;
+    - if ( 'testimonial_slider_block' === get_row_layout() ) :;
         - get_template_part( 'includes/flex/flex', 'testimonial-slider' );
     - endif;
 - }
@@ -91,5 +96,35 @@
 - function flexTestimonialCards() {
     - if ( 'testimonial_cards' === get_row_layout() ) :;
         - get_template_part( 'includes/flex/flex', 'testimonial-cards' );
+    - endif;
+- }
+
+- function flexHomeHero() {
+    - if ( 'home_hero' === get_row_layout() ) :;
+        - get_template_part( 'includes/flex/flex', 'home-hero' );
+    - endif;
+- }
+
+- function flexContentTwoCol() {
+    - if ( 'content_two_col_block' === get_row_layout() ) :;
+        - get_template_part( 'includes/flex/flex', 'content-two-col');
+    - endif;
+- }
+
+- function flexGalleryGrid() {
+    - if ( 'gallery_grid_block' === get_row_layout() ) :;
+        - get_template_part( 'includes/flex/flex', 'gallery-grid' );
+    - endif;
+- }
+
+- function flexGalleryCarousel() {
+    - if ( 'gallery_carousel_block' === get_row_layout() ) :;
+        - get_template_part( 'includes/flex/flex', 'gallery-carousel' );
+    - endif;
+- }
+
+- function flexDarkCTA() {
+    - if ( 'dark_cta_block' === get_row_layout() ) :;
+        - get_template_part( 'includes/flex/flex', 'dark-cta-block');
     - endif;
 - }

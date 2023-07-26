@@ -20,6 +20,8 @@ jQuery(function ($) {
     flexTestimonialSlider($);
     flexFeaturedContentSlider($);
     flexTestimonialCards($);
+    flexHomeSlider($);
+    flexGalleryCarousel($);
 });
 
 /**
@@ -312,6 +314,48 @@ const flexTestimonialCards = ($) => {
             768: {
                 slidesPerView: 3,
                 spaceBetween: 40,
+            },
+        },
+    });
+};
+
+const flexHomeSlider = ($) => {
+    var slider = new Swiper('.home-hero-slider', {
+        slidesPerView: 1,
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+            delay: 6000,
+            disableOnInteraction: false,
+        },
+        spaceBetween: 0,
+    });
+};
+
+const flexGalleryCarousel = ($) => {
+    var slider = new Swiper('.gallery-carousel', {
+        slidesPerView: 1,
+        loop: true,
+        spaceBetween: 0,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 0,
+            },
+            950: {
+                slidesPerView: 3,
+                spaceBetween: 0,
             },
         },
     });

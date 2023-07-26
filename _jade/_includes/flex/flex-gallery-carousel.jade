@@ -1,0 +1,12 @@
+- $gallery = get_sub_field('gallery')
+
+section.flex-block.flex-gallery-carousel
+	- if (have_rows('gallery_carousel')) :
+		.swiper.gallery-carousel
+			.swiper-wrapper
+				- while (have_rows('gallery_carousel')) : the_row()
+					.swiper-slide(aria-label="<?= get_sub_field('image')['alt']?>" style="background-image:url('<?= get_sub_field('image')['url']?>'); height: 400px;")
+				- endwhile
+			//- .swiper-button-prev
+			//- .swiper-button-next
+	- endif

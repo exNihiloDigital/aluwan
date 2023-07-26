@@ -2,12 +2,8 @@
 // ================================================================
 
 $fonts: (
-    body: #{'Open Sans',
-    Helvetica,
-    Arial,
-    sans-serif},
-    heading: #{'Montserrat',
-    sans-serif},
+    heading: #{'Playfair Display SC', serif},
+    body: #{'Source Sans 3', serif},
 );
 
 *,
@@ -39,11 +35,11 @@ img {
 body {
     background: white;
     color: color(dark);
-    font-family: font(body);
-    font-size: 20px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 22px;
     font-weight: 400;
     letter-spacing: 0;
-    line-height: 1.5;
+    line-height: 42px;
 }
 
 button,

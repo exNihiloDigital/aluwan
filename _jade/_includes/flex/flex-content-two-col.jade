@@ -1,0 +1,21 @@
+section.flex-block.flex-content-two-col
+	section.content-block
+		- if(get_sub_field('content_left')): 
+			- echo get_sub_field('content_left')
+		- endif
+		- if(get_sub_field('button_left')): 
+			a.button.button-slide(
+				href="<?php echo get_sub_field('button_left')['url'];?>" 
+				target="<?php echo get_sub_field('button_left')['target'];?>")
+				- echo get_sub_field('button_left')['title']
+		- endif
+	aside.content-block
+		- if(get_sub_field('content_right')): 
+			- echo get_sub_field('content_right')
+		- endif
+		- if(get_sub_field('button_right')): 
+			a.button.button-slide(
+				href="<?php echo get_sub_field('button_right')['url'];?>" 
+				target="<?php echo get_sub_field('button_right')['target'];?>")
+				- echo get_sub_field('button_right')['title']
+		- endif

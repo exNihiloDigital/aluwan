@@ -12,6 +12,7 @@ body.login {
     div#login {
         h1 a {
             background: url('../../images/logo.png') center no-repeat;
+            background-size: contain;
             width: 100%;
         }
 

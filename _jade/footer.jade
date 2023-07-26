@@ -1,15 +1,17 @@
 - get_header()
 - if(get_field('footer_CTA', 'options') == "on"): 
-	section.footer-cta.hrz-padding
-		.container.content-block
+	.footer-cta
+		section 
+			h2: - echo get_field('footer_cta_title', 'options')
 			- echo get_field('footer_cta_content', 'options')
 			- if(get_field('footer_cta_button', 'options')) :
-				a.button(
+				a.button.button-slide(
 					href="<?= get_field('footer_cta_button', 'options')['url'];?>" 
 					target="<?= get_field('footer_cta_button', 'options')['target'];?>"
 					) 
 					- echo get_field('footer_cta_button', 'options')['title']
 			- endif
+		aside(style="background-image:url('<?= get_field('footer_cta_image', 'options')['url']; ?>');" alt="<?= get_field('footer_cta_image', 'options')['alt']; ?>")
 - endif
 
 footer.hrz-padding
@@ -18,18 +20,19 @@ footer.hrz-padding
 			.footer-logo
 				a(href="<?php echo esc_url( home_url('/') ) ;?>")
 					img(
-						src="<?php echo esc_url(get_theme_file_uri()) ?>/images/logo-white.png" 
+						src="<?php echo esc_url(get_theme_file_uri()) ?>/images/logo.png" 
 						alt="<?php bloginfo('name') ?> Logo"
 						)
-			- include('includes/contact-info.php')
 		section
 			- include('includes/social-links.php')
+			- include('includes/contact-info.php')
+
+	.copyright.container
+		section 
+			p &copy; Copyright <?= date('Y'); ?>, <?= get_bloginfo('name') ?>
+		aside
 			.footer-menu
 				- footer_menu()
-
-	.copyright
-		.container
-			- site_info()
 
 - wp_footer()
 
