@@ -3,12 +3,12 @@
 %container {
     margin: 0 auto;
     max-width: 100%;
-    width: 1400px;
+    width: 1361px;
 }
 %container-lg {
     margin: 0 auto;
     max-width: 100%;
-    width: 1400px;
+    width: 1589px;
 }
 %container-full {
     margin: 0 auto;
@@ -20,17 +20,17 @@
     padding-right: 20px;
 
     @include breakpoint(769px up) {
-        padding-left: 40px;
-        padding-right: 40px;
+        padding-left: 45px;
+        padding-right: 45px;
     }
 }
 %vertical-padding {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 61px;
+    padding-bottom: 61px;
 
     @include breakpoint(769px up) {
-        padding-top: 100px;
-        padding-bottom: 100px;
+        padding-top: 97px;
+        padding-bottom: 97px;
     }
 }
 %button {
@@ -40,7 +40,7 @@
     cursor: pointer;
     display: inline-block;
     margin: 0 auto 20px;
-    padding: 10px 30px;
+    padding: 11px 33px;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
@@ -54,8 +54,8 @@
     }
     &.button-ghost {
         background-color: transparent;
-        border: 2px solid color(one);
-        color: color(one);
+        border: 2px solid white;
+        color: white;
 
         &:hover {
             background-color: color(two);

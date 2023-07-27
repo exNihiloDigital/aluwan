@@ -978,13 +978,107 @@
         color: color(dark);
 
         .container{
+            align-items: stretch;
+            display: flex;
+            gap: 38px;
+            flex-wrap: wrap;
             text-align: center;
-            width: 950px;
-
+            
+            @include breakpoint(769px up){
+                flex-wrap: nowrap;
+            }
             h2, h3, h4, h5, h6{
                 color: color(dark);
             }
             section{
+                flex-basis: 60%;
+                text-align: left;
+            }
+            aside{
+                flex-basis: 40%;
+                background-position: center;
+                background-size: cover;
+            }
+        }
+    }
+    &.flex-home-services{
+
+        .home-services-blocks{
+            align-items: stretch;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+            margin-bottom: 0;
+
+            @include breakpoint(900px up){
+                gap: 11px;
+                text-align: center;
+            }
+            .service-block{
+                background-position: center;
+                background-size: cover;
+                color: white;
+                display: block;
+                flex-basis: 100%;
+                font-weight: 400;
+                margin: 0 auto;
+                max-width: 100%;
+                min-height: 500px;
+                overflow: hidden;
+                padding: 32px;
+                position: relative;
+                text-align: center;
+
+                @include breakpoint(900px up){
+                    flex-basis: calc(33.3333333% - 11px);
+                    max-width: 50%;
+                }
+                &:hover{
+                    &.overlay{
+                        &:after{
+                            background-color: transparent;
+                        }
+                    }
+                    .service-block-content{
+                        top: 0%;
+
+                        &:before{
+                            top: 0;
+                        }
+                    }
+                }
+                .service-block-content{
+                    // border-top: 3px solid white;
+                    // border-bottom: 3px solid white;
+                    height: 100%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    position: absolute;
+                    top: 75%;
+                    width: 100%;
+                    z-index: 100;
+                    transition: all 0.4s;
+                    
+                    @include breakpoint(769px up){
+                        padding: 52px;
+                    }
+                    &:before{
+                        background-color: color(one);
+                        content: '';
+                        display: block;
+                        height: 100%;
+                        left: 0;
+                        opacity: 0.8;
+                        position: absolute;
+                        top: 20px;
+                        width: 100%;
+                        z-index: -1;
+                        transition: all 0.2s;
+                    }
+                    h3{
+                        color: white;
+                    }
+                }
             }
         }
     }

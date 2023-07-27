@@ -4,16 +4,18 @@
 
 section.flex-block.flex-dark-cta-block.hrz-padding
 	.container.vert-padding
-		- if($heading) :
-			h2.no-hborder: - echo $heading
-		- endif
+		aside(style="background-image:url('<?= get_sub_field('image')['url']; ?>');")
 		section
+			- if($heading) :
+				h2.no-hborder: - echo $heading
+			- endif
 			- if(get_sub_field('content')): 
 				- echo get_sub_field('content')
 			- endif
 			- if(get_sub_field('button')): 
 				a.button.button-slide(
 					href="<?php echo get_sub_field('button')['url'];?>" 
-					target="<?php echo get_sub_field('button')['target'];?>")
+					target="<?php echo get_sub_field('button')['target'];?>"
+					aria-label="<?php echo get_sub_field('button')['title'];?>")
 					- echo get_sub_field('button')['title']
 			- endif

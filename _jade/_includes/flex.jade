@@ -18,6 +18,7 @@
         - flexGalleryGrid()
         - flexGalleryCarousel()
         - flexDarkCTA()
+        - flexHomeServices()
     - endwhile
 - endif
 
@@ -126,5 +127,11 @@
 - function flexDarkCTA() {
     - if ( 'dark_cta_block' === get_row_layout() ) :;
         - get_template_part( 'includes/flex/flex', 'dark-cta-block');
+    - endif;
+- }
+
+- function flexHomeServices() {
+    - if ( 'home_services' === get_row_layout() ) :;
+        - get_template_part( 'includes/flex/flex', 'home-services');
     - endif;
 - }
