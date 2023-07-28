@@ -1,5 +1,30 @@
 - // featured('title'), featured('image'), featured('alt')
+- if(!is_archive()):
+    - $overlay = 'overlay'
+- else :
+    - $overlay = ''
+- endif
 
-.featured.overlay(style="background-image: url(<?php featured('image') ?>)")
-    .container
-        h1: - featured('title') 
+- if(is_singular('professionals')):
+    .featured.professionals-single
+        .container
+            aside
+                img(src="<?= get_the_post_thumbnail_url();?>", alt="<?= featured('title');?> - Headshot")
+            section
+                h1: - featured('title')
+                - $categories = get_the_category();
+                - if (!empty($categories)) :
+                    - foreach ($categories as $category) :
+                        h2: - echo esc_html($category->name) . ' ';
+                    - endforeach
+                - endif
+                - if(get_field('linkedin_link')):
+                    a(href="<?=get_field('linkedin_link')['url'];?>" target="_blank" aria-label="LinkedIn Profile for <?= featured('title')?>")
+                        |LinkedIn Profile
+                        i.fas.fa-external-link-alt
+                - endif
+- else :
+    .featured(style="background-image: url(<?php featured('image') ?>)" class="<?= $overlay;?>")
+        .container
+            h1: - featured('title') 
+- endif

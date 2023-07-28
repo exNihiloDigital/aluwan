@@ -1021,7 +1021,7 @@
                 display: block;
                 flex-basis: 100%;
                 font-weight: 400;
-                margin: 0 auto;
+                margin: 0 auto 20px;
                 max-width: 100%;
                 min-height: 500px;
                 overflow: hidden;
@@ -1031,6 +1031,7 @@
 
                 @include breakpoint(900px up){
                     flex-basis: calc(33.3333333% - 11px);
+                    margin-bottom: 0;
                     max-width: 50%;
                 }
                 &:hover{
@@ -1054,13 +1055,14 @@
                     left: 50%;
                     transform: translateX(-50%);
                     position: absolute;
-                    top: 75%;
+                    top: 33px;
                     width: 100%;
                     z-index: 100;
                     transition: all 0.4s;
                     
                     @include breakpoint(769px up){
                         padding: 52px;
+                        top: 75%;
                     }
                     &:before{
                         background-color: color(one);
@@ -1070,10 +1072,14 @@
                         left: 0;
                         opacity: 0.8;
                         position: absolute;
-                        top: 20px;
+                        top: -33px;
                         width: 100%;
                         z-index: -1;
                         transition: all 0.2s;
+                        
+                        @include breakpoint(769px up){
+                            top: 20px;
+                        }
                     }
                     h3{
                         color: white;

@@ -11,6 +11,9 @@
 					) 
 					- echo get_field('footer_cta_button', 'options')['title']
 			- endif
+			- if(get_field('form_embed_code', 'options')):
+				p: - echo get_field('form_embed_code', 'options')
+			- endif
 		aside(style="background-image:url('<?= get_field('footer_cta_image', 'options')['url']; ?>');" alt="<?= get_field('footer_cta_image', 'options')['alt']; ?>")
 - endif
 

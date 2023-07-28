@@ -216,18 +216,16 @@ header {
 #archive,
 #index,
 #search {
-    padding: 0 40px;
-
-    @include breakpoint(769px down) {
-        padding: 0 20px;
-    }
+}
+#archive{
     .post-container {
-        display: block;
+        align-items: stretch;
+        display: flex;
+        flex-wrap: wrap;
 
         @include breakpoint(769px up) {
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: flex-start;
+            gap: 33px;
+            justify-content: center;
         }
     }
 }

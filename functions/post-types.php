@@ -14,13 +14,13 @@ function post_types()
 
     $post_types = array(
         array(
-            'slug'        => 'example',
-            'single_name' => 'Example',
-            'plural_name' => 'Examples',
-            'menu_name'   => 'Example',
+            'slug'        => 'professionals',
+            'single_name' => 'Professional',
+            'plural_name' => 'Professionals',
+            'menu_name'   => 'Professionals',
             'description' => '',
             // https://developer.wordpress.org/resource/dashicons/#microphone
-            'dashicon'    => 'dashicons-menu'
+            'dashicon'    => 'dashicons-businessman'
         )
     );
 
@@ -60,7 +60,7 @@ function post_types()
             'description'           => __($post_type["description"], 'custom'),
             'labels'                => $post_type_labels,
             'supports'              => array('title', 'editor', 'thumbnail'),
-            // 'taxonomies'            => array('example', 'post_tag'),
+            'taxonomies'            => array('professionals', 'category'),
             'hierarchical'          => false,
             'public'                => true,
             'show_ui'               => true,
