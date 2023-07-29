@@ -178,3 +178,9 @@ function pagination($pages = '', $range = 4)
         echo "</div>\n";
     }
 }
+
+// Removes Category from Post
+function remove_categories_from_posts() {
+    register_taxonomy_for_object_type('category', 'post');
+}
+add_action('init', 'remove_categories_from_posts');

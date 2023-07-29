@@ -6,7 +6,7 @@
 - endif
 
 - if(is_singular('professionals')):
-    .featured.professionals-single
+    .featured.professionals-single.hrz-padding
         .container
             aside
                 img(src="<?= get_the_post_thumbnail_url();?>", alt="<?= featured('title');?> - Headshot")
@@ -24,7 +24,10 @@
                         i.fas.fa-external-link-alt
                 - endif
 - else :
-    .featured(style="background-image: url(<?php featured('image') ?>)" class="<?= $overlay;?>")
+    .featured.hrz-padding(style="background-image: url(<?php featured('image') ?>)" class="<?= $overlay;?>")
         .container
-            h1: - featured('title') 
+            h1: - featured('title')
+                - if(get_field('page_subtitle')):
+                    span: - echo get_field('page_subtitle')
+                - endif
 - endif

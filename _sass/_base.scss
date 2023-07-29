@@ -16,13 +16,21 @@ img {
     width: auto;
 
     &.alignright {
-        float: right;
-        margin: 0 0 20px 20px;
+        margin: 20px 0 20px 0;
+        
+        @include breakpoint(769px up){
+            margin: 0 0 20px 20px;
+            float: right;
+        }
     }
 
     &.alignleft {
-        float: left;
-        margin: 0 20px 20px 0;
+        margin: 20px 0 20px 0;
+        
+        @include breakpoint(769px up){
+            margin: 0 20px 20px 0;
+            float: left;
+        }
     }
 
     &.aligncenter {

@@ -22,6 +22,10 @@ jQuery(function ($) {
     flexTestimonialCards($);
     flexHomeSlider($);
     flexGalleryCarousel($);
+    profFilter($);
+    
+    // Add copy functionality to post share
+    new ClipboardJS('.copy_btn');
 });
 
 /**
@@ -360,3 +364,19 @@ const flexGalleryCarousel = ($) => {
         },
     });
 };
+const profFilter = ($) => {
+    $('#category-filter').change(function(){
+        var category = $(this).find('option:selected').val();
+        console.log(category);
+        
+        $('.post').each(function(){
+            if($(this).attr('data-cat') == category){
+                $(this).addClass('active-post');
+            }else if(category === '0'){
+                $(this).addClass('active-post');
+            } else {
+                $(this).removeClass('active-post');
+            }
+        });
+    });
+}

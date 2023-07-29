@@ -1,7 +1,19 @@
 - get_header()
 
 article#archive.hrz-padding
-    .container.content-block.post-container
+    .container.filter-container
+        form#category-filter(action="<?php echo site_url(); ?>/wp-admin/admin-ajax.php" method="POST")
+            :php
+                $args = array(
+                    'show_option_all' => 'All categories',
+                    'taxonomy'        => 'category',
+                    'name'            => 'category',
+                    'id'              => 'category',
+                    'selected'        => (isset($_GET['category']) ? $_GET['category'] : ''),
+                    'value_field'     => 'slug',
+                );
+                wp_dropdown_categories($args);
+    .container.content-block.post-container#posts-container
         - if (have_posts()) :
             - while (have_posts()) : the_post()
                 - include('includes/loop-post.php')

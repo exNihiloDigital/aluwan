@@ -218,14 +218,28 @@ header {
 #search {
 }
 #archive{
+    .filter-container{
+        padding: 100px 0 45px;
+
+        form#category-filter{
+            select{
+                background-color: color(light);
+                border: 1px solid color(dark);
+                border-radius: 0;
+                cursor: pointer;
+                padding: 10px 15px;
+            }
+        }
+    }
     .post-container {
         align-items: stretch;
         display: flex;
         flex-wrap: wrap;
+        padding-top: 0;
 
         @include breakpoint(769px up) {
             gap: 33px;
-            justify-content: center;
+            justify-content: flex-start;
         }
     }
 }

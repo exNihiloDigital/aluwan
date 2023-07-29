@@ -991,13 +991,22 @@
                 color: color(dark);
             }
             section{
-                flex-basis: 60%;
+                flex-basis: 100%;
                 text-align: left;
+                
+                @include breakpoint(769px up){
+                    flex-basis: 60%;
+                }
             }
             aside{
-                flex-basis: 40%;
                 background-position: center;
                 background-size: cover;
+                flex-basis: 100%;
+                min-height: 300px;
+                
+                @include breakpoint(769px up){
+                    flex-basis: 40%;
+                }
             }
         }
     }
@@ -1083,6 +1092,37 @@
                     }
                     h3{
                         color: white;
+                    }
+                }
+            }
+        }
+    }
+    &.flex-image-content-list{
+        .container{
+            .content-list{
+                .list-item{
+                    align-items: flex-start;
+                    display: flex;
+                    gap: 10px;
+                    flex-wrap: wrap;
+                    margin-bottom: 33px;
+                    
+                    @include breakpoint(769px up){
+                        gap: 33px;
+                    }
+                    aside{
+                        flex-basis: 100%;
+
+                        @include breakpoint(769px up){
+                            flex-basis: calc(25% - 33px);
+                        }
+                    }
+                    section{
+                        flex-basis: 100%;
+
+                        @include breakpoint(769px up){
+                            flex-basis: calc(75% - 20px);
+                        }
                     }
                 }
             }

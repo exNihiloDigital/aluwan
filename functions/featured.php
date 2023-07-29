@@ -33,16 +33,17 @@ function featured( $key )
 
     if (is_home() || is_home() && is_paged() ) {
         array_push($title, 'Blog');
+        array_push($image, get_theme_file_uri() . '/images/featured.png');
 
-        if (get_queried_object() && get_queried_object() -> ID ) {
-            $id = get_queried_object() -> ID;
-            $thumb = get_post_thumbnail_id($id);
-            $att = wp_get_attachment_image_src($thumb, 'full')[0];
+        // if (get_queried_object() && get_queried_object() -> ID ) {
+        //     $id = get_queried_object() -> ID;
+        //     $thumb = get_post_thumbnail_id($id);
+        //     $att = wp_get_attachment_image_src($thumb, 'full')[0];
 
-            array_push($image, $att);
-        } else {
-            array_push($image, get_theme_file_uri() . '/images/featured.jpg');
-        }
+        //     array_push($image, $att);
+        // } else {
+        //     array_push($image, get_theme_file_uri() . '/images/featured.jpg');
+        // }
     }
 
     if (is_page() ) {
@@ -51,7 +52,11 @@ function featured( $key )
 
     if (is_single() ) {
         array_push($title, get_the_title());
-        array_push($image, get_theme_file_uri() . '/images/featured.jpg');
+        array_push($image, wp_get_attachment_image_src(get_post_thumbnail_id(), 'full')[0]);
+    }
+
+    if(is_singular('professional')){
+        array_push($title, get_the_title());
     }
 
     if (is_date() ) {

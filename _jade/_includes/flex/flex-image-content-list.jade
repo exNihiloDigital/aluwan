@@ -1,0 +1,26 @@
+//- Variables
+- $list = get_sub_field('list')
+
+section.flex-block.flex-image-content-list.hrz-padding
+	.container.content-block
+		- if(get_sub_field('content')):
+			- echo get_sub_field('content')
+			br
+			br
+		- endif
+		- if (have_rows('list')) :
+			.content-list
+				- while (have_rows('list')) : the_row()
+					.list-item
+						aside
+							img(
+								src="<?= get_sub_field('image')['url']?>", 
+								alt="<?= get_sub_field('image')['alt']?>")
+						section
+							- the_sub_field('content')
+							- if(get_sub_field('button')):
+								a(href="<?= get_sub_field('button')['url']?>" target="<?= get_sub_field('button')['target']?>") 
+									- echo get_sub_field('button')['title']
+							- endif
+				- endwhile
+		- endif

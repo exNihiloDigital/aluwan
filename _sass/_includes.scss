@@ -421,6 +421,13 @@ article {
             @include breakpoint(769px up) {
                 padding: 180px 0;
             }
+            span{
+                display: block;
+                font-family: 'Source Sans 3', sans-serif;
+                font-size: 33px;
+                font-weight: 400;
+                margin-top: 33px;
+            }
         }
     }
 
@@ -490,7 +497,7 @@ article {
     z-index: 1;
 
     &:after {
-        background-color: rgba(color(dark), 0.6);
+        background-color: rgba(color(dark), 0.7);
         bottom: 0;
         content: '';
         display: block;
@@ -571,15 +578,22 @@ article {
 
 a.post {
     background: white;
-    display: block;
+    display: none;
     flex-basis: 100%;
     margin-bottom: 40px;
     width: 100%;
 
     @include breakpoint(769px up) {
-        flex-basis: calc(33.33333% - 33px);
+        flex-basis: calc(34% - 33px);
     }
-
+    &:hover{
+        .post-content{
+            background-color: color(dark);
+        }
+    }
+    &.active-post{
+        display: block;
+    }
     .post-image {
         background-position: top center;
         background-size: cover;
@@ -588,11 +602,13 @@ a.post {
         margin: 0 auto;
         width: 100%;
     }
-
     .post-content {
         background-color: color(one);
+        color: white;
+        font-weight: 400;
         padding: 30px;
         text-align: center;
+        transition: all 0.2s;
 
         h1,
         h2,
@@ -601,13 +617,10 @@ a.post {
         h5,
         h6 {
             color: white;
-            margin: 0;
         }
-
         p {
             margin: 20px auto 25px;
         }
-
         .button {
             margin: 0;
         }
@@ -1032,6 +1045,67 @@ ul.social-links {
 
             span {
                 display: block;
+            }
+        }
+    }
+}
+// ===========================================================
+// Social Share Links
+// ===========================================================
+.social-block{
+    border-bottom: 1px solid color(dark);
+    border-top: 1px solid color(dark);
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 52px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+    @include breakpoint(769px up){
+        flex-wrap: nowrap;
+    }
+    &.social-bottom{
+        margin-bottom: 0;
+        margin-top: 52px;
+    }
+    aside{
+        flex: 100%;
+        text-align: center;
+
+        @include breakpoint(769px up){
+            text-align: left;
+        }
+        @include breakpoint(950px up){
+            flex: 50%;
+        }
+        p{
+            margin: 0;
+        }
+    }
+    section{
+        flex: 100%;
+        text-align: center;
+
+        @include breakpoint(950px up){
+            flex: 50%;
+            text-align: right;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            li{
+                display: inline-block;
+                margin: 0 0 0 20px;
+                padding: 0;
+
+                &:before{
+                    display: none;
+                }
+                &:first-child{
+                    margin-left: 0;
+                }
             }
         }
     }

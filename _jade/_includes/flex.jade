@@ -19,6 +19,7 @@
         - flexGalleryCarousel()
         - flexDarkCTA()
         - flexHomeServices()
+        - flexImageContentList()
     - endwhile
 - endif
 
@@ -133,5 +134,11 @@
 - function flexHomeServices() {
     - if ( 'home_services' === get_row_layout() ) :;
         - get_template_part( 'includes/flex/flex', 'home-services');
+    - endif;
+- }
+
+- function flexImageContentList() {
+    - if ( 'image_and_content_list' === get_row_layout() ) :;
+        - get_template_part( 'includes/flex/flex', 'image-content-list');
     - endif;
 - }
