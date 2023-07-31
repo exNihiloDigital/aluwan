@@ -23,7 +23,8 @@ jQuery(function ($) {
     flexHomeSlider($);
     flexGalleryCarousel($);
     profFilter($);
-    
+    misc($);
+
     // Add copy functionality to post share
     new ClipboardJS('.copy_btn');
 });
@@ -281,6 +282,9 @@ const flexTestimonialSlider = ($) => {
             el: '.swiper-pagination',
             clickable: true,
         },
+        a11y: true,
+        prevSlideMessage: 'Previous Slide',
+        nextSlideMessage: 'Next Slide',
     });
 };
 const flexFeaturedContentSlider = ($) => {
@@ -378,5 +382,13 @@ const profFilter = ($) => {
                 $(this).removeClass('active-post');
             }
         });
+    });
+}
+const misc = ($) => {
+    $('.swiper-button-prev').each(function(){
+        $(this).attr('aria-label', 'Previous Slide');
+    });
+    $('.swiper-button-next').each(function(){
+        $(this).attr('aria-label', 'Next Slide');
     });
 }

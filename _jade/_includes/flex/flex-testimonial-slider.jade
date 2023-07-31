@@ -8,7 +8,7 @@ section.flex-block.flex-testimonial-slider.hrz-padding(style="background-image: 
 					- while (have_rows('testimonials')) : the_row()
 						.swiper-slide
 							p: - echo get_sub_field('testimonial')
-							h4: - echo get_sub_field('testimonial_name')
+							p: - echo get_sub_field('testimonial_name')
 					- endwhile
 				.swiper-button-prev
 				.swiper-button-next
