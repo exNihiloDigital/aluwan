@@ -118,6 +118,13 @@ article {
             background-color: color(medium);
         }
     }
+    ul{
+        li{
+            &:before{
+                background-color: white;
+            }
+        }
+    }
 }
 
 .bg-color-one {
