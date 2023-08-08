@@ -1117,3 +1117,23 @@ ul.social-links {
         }
     }
 }
+// ===========================================================
+// Rate My Post plugin 
+// ===========================================================
+.rmp-widgets-container{
+    .rmp-rating-widget{
+        .rmp-rating-widget__icons{
+            ul.rmp-rating-widget__icons-list{
+                li.rmp-rating-widget__icons-list__icon{
+                    // border: 2px solid red;
+                    &:before{
+                        display: none;
+                    }
+                    &:first-child{
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
