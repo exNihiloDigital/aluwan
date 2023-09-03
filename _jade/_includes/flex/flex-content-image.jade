@@ -2,6 +2,7 @@
 - $content = get_sub_field('content')
 - $image = get_sub_field('image')
 - $button = get_sub_field('button')
+- $video = get_sub_field('video_embed')
 - $image_position = get_sub_field('image_position')
 
 section.flex-block.flex-content-image.hrz-padding(class="img-position-<?= $image_position;?>")
@@ -22,8 +23,12 @@ section.flex-block.flex-content-image.hrz-padding(class="img-position-<?= $image
 					- echo $button['title']
 			- endif
 		aside.column
-			- if($image) :
+			- if($image && !$video) :
 				.image-wrapper(
 					style="background-image:url('<?= $image['url'];?>');"
 					alt="<?= $image['alt'];?>")
+			- endif
+			- if($video) :
+				.video-wrapper
+					- echo $video
 			- endif

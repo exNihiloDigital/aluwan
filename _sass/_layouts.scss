@@ -310,7 +310,7 @@ footer {
                 color: color(one);
 
                 &:hover{
-                    color: white;
+                    color: color(two);
                 }
             }
             .footer-menu {
@@ -346,6 +346,9 @@ footer {
             @include breakpoint(769px up){
                 text-align: left;
             }
+            p{
+                line-height: 1em;
+            }
         }
         aside{
             text-align: center;
@@ -369,7 +372,7 @@ footer {
                         font-weight: 400;
 
                         &:hover{
-                            color: white;
+                            color: color(two);
                         }
                     }
                 }

@@ -820,26 +820,35 @@
                 @include breakpoint(769px up){
                     padding: 0 10%;
                 }
-                // &::before{
-                //     background-color: color(dark);
-                //     content: '';
-                //     display: block;
-                //     height: 100%;
-                //     left: 0;
-                //     opacity: 0.2;
-                //     position: absolute;
-                //     top: 0;
-                //     width: 100%;
-                // }
+                &::before{
+                    background-color: color(dark);
+                    content: '';
+                    display: block;
+                    height: 100%;
+                    left: 0;
+                    opacity: 0.4;
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                }
                 .slide-content{
                     background-color: rgba(color(light), 0.9);
-                    padding: 43px;
+                    padding: 43px 20px;
                     position: relative;
                     z-index: 10;
 
                     @include breakpoint(769px up){
-                        flex-basis: 40%;
+                        flex-basis: 41%;
+                        padding: 43px;
                         // margin: 0 auto;
+                    }
+                    h2{
+                        margin-bottom: 15px;
+                    }
+                    h3{
+                        font-family: font(script);
+                        font-size: 39px;
+                        margin-bottom: 15px;
                     }
                 }
             }
@@ -879,7 +888,11 @@
                 color: color(light);
             }
             h1{
-                font-size: 43px;
+                font-size: 36px;
+                
+                @include breakpoint(769px up){
+                    font-size: 43px;
+                }
             }
             img{
                 max-height: 61px;
@@ -980,10 +993,11 @@
         color: color(dark);
 
         .container{
-            align-items: stretch;
+            align-items: flex-start;
             display: flex;
             gap: 38px;
             flex-wrap: wrap;
+            flex-direction: row-reverse;
             text-align: center;
             
             @include breakpoint(769px up){
@@ -1004,7 +1018,7 @@
                 background-position: center;
                 background-size: cover;
                 flex-basis: 100%;
-                min-height: 300px;
+                min-height: 500px;
                 
                 @include breakpoint(769px up){
                     flex-basis: 40%;
@@ -1065,6 +1079,7 @@
                     height: 100%;
                     left: 50%;
                     transform: translateX(-50%);
+                    padding: 20px;
                     position: absolute;
                     top: 33px;
                     width: 100%;
@@ -1081,7 +1096,7 @@
                         display: block;
                         height: 100%;
                         left: 0;
-                        opacity: 0.8;
+                        opacity: 1;
                         position: absolute;
                         top: -33px;
                         width: 100%;
@@ -1089,6 +1104,7 @@
                         transition: all 0.2s;
                         
                         @include breakpoint(769px up){
+                            opacity: 0.8;
                             top: 20px;
                         }
                     }

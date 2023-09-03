@@ -1018,13 +1018,14 @@ ul.social-links {
     a {
         color: white;
         display: block;
-        font-size: 28px;
+        font-size: 20px;
         margin-bottom: 8px;
-
+        
         @include breakpoint(769px up) {
             align-items: flex-start;
             display: flex;
             flex-wrap: wrap;
+            font-size: 28px;
         }
         &:hover {
             color: white;

@@ -11,7 +11,7 @@ function enqueue_fonts()
      * font-family: 'Montserrat', sans-serif;
      * font-family: 'Roboto', sans-serif;
     */
-    wp_enqueue_style('fonts', 'https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,700;1,300;1,700&display=swap');
+    wp_enqueue_style('fonts', 'https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,700;1,300;1,700&family=Mr+Dafoe&display=swap');
 }
 add_action('wp_enqueue_scripts', 'enqueue_fonts');
 

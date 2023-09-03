@@ -4,7 +4,8 @@
 
 section.flex-block.flex-dark-cta-block.hrz-padding
 	.container.vert-padding
-		aside(style="background-image:url('<?= get_sub_field('image')['url']; ?>');")
+		aside
+			img(src="<?= get_sub_field('image')['url']; ?>", alt="<?= get_sub_field('image')['alt']; ?>")
 		section
 			- if($heading) :
 				h2.no-hborder: - echo $heading

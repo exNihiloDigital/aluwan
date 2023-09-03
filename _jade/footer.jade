@@ -32,7 +32,8 @@ footer.hrz-padding
 
 	.copyright.container
 		section 
-			p &copy; Copyright <?= date('Y'); ?>, <?= get_bloginfo('name') ?>
+			p &copy; Copyright <?= date('Y'); ?>  <?= get_bloginfo('name') ?>
+				- echo ', '.get_field('copyright_addition', 'options')
 		aside
 			.footer-menu
 				- footer_menu()

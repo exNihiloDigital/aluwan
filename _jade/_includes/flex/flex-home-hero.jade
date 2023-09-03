@@ -8,7 +8,8 @@ section.flex-block.flex-home-hero
 					.swiper-slide(style="background-image: url('<?= get_sub_field('hero_image')['url']; ?>');")
 						.slide-content
 							h2: - echo get_sub_field('hero_title')
-							p: - echo get_sub_field('hero_subtitle')
+							h3: - echo get_sub_field('hero_subtitle')
+							p: - echo get_sub_field('hero_content')
 							- if(get_sub_field('hero_button')):
 								a.button.button-slide(
 									href="<?= get_sub_field('hero_button')['url'];?>" 
