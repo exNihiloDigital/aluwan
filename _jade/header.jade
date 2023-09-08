@@ -59,9 +59,13 @@ header
         .container
             .logo
                 a(href="<?= esc_url(home_url('/')) ?>")
+                    //- img(
+                    //-     src="<?= esc_url(get_theme_file_uri()) ?>/images/logo.png" 
+                    //-     alt="<?php bloginfo('name') ?> Logo"
+                    //-     )
                     img(
-                        src="<?= esc_url(get_theme_file_uri()) ?>/images/logo.png" 
-                        alt="<?php bloginfo('name') ?> Logo"
+                        src="<?= get_field('site_logo', 'options')['url'];?>" 
+                        alt="<?= get_field('site_logo', 'options')['alt'];?>"
                         )
 
             .menu

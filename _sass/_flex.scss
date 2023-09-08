@@ -820,17 +820,17 @@
                 @include breakpoint(769px up){
                     padding: 0 10%;
                 }
-                &::before{
-                    background-color: color(dark);
-                    content: '';
-                    display: block;
-                    height: 100%;
-                    left: 0;
-                    opacity: 0.4;
-                    position: absolute;
-                    top: 0;
-                    width: 100%;
-                }
+                // &::before{
+                //     background-color: color(dark);
+                //     content: '';
+                //     display: block;
+                //     height: 100%;
+                //     left: 0;
+                //     opacity: 0.4;
+                //     position: absolute;
+                //     top: 0;
+                //     width: 100%;
+                // }
                 .slide-content{
                     background-color: rgba(color(light), 0.9);
                     padding: 43px 20px;

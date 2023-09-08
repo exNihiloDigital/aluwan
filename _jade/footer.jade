@@ -33,7 +33,7 @@ footer.hrz-padding
 	.copyright.container
 		section 
 			p &copy; Copyright <?= date('Y'); ?>  <?= get_bloginfo('name') ?>
-				- echo ', '.get_field('copyright_addition', 'options')
+			p(style="font-size: 16px;"): - echo get_field('copyright_addition', 'options')
 		aside
 			.footer-menu
 				- footer_menu()
