@@ -4,6 +4,7 @@
 .gform_wrapper {
     display: inline-block;
     margin: 0 auto 60px !important;
+    width: 80%;
 
     ul.gform_fields {
         > li {
@@ -130,4 +131,15 @@
     padding: 20px 25px 30px;
     background: #f1f1f1;
     border-radius: 4px;
+}
+.name_first input, .name_last input, textarea, .datepicker {
+    background-color: white !important;
+}
+.ginput_container_number,
+.ginput_container_email,
+.ginput_container_phone
+{
+    input{
+        border: 1px solid #ccc;
+    }
 }

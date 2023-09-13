@@ -12,7 +12,7 @@
 					- echo get_field('footer_cta_button', 'options')['title']
 			- endif
 			- if(get_field('form_embed_code', 'options')):
-				p: - echo get_field('form_embed_code', 'options')
+				- echo do_shortcode(get_field('form_embed_code', 'options'))
 			- endif
 		aside(style="background-image:url('<?= get_field('footer_cta_image', 'options')['url']; ?>');" alt="<?= get_field('footer_cta_image', 'options')['alt']; ?>")
 - endif
@@ -23,8 +23,8 @@ footer.hrz-padding
 			.footer-logo
 				a(href="<?php echo esc_url( home_url('/') ) ;?>")
 					img(
-						src="<?php echo esc_url(get_theme_file_uri()) ?>/images/logo.png" 
-						alt="<?php bloginfo('name') ?> Logo"
+						src="<?= get_field('site_logo', 'options')['url'];?>" 
+						alt="<?= get_field('site_logo', 'options')['alt'];?>"
 						)
 		section
 			- include('includes/social-links.php')

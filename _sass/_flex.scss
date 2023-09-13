@@ -832,23 +832,31 @@
                 //     width: 100%;
                 // }
                 .slide-content{
-                    background-color: rgba(color(light), 0.9);
+                    background-color: rgba(color(dark), 0.3);
                     padding: 43px 20px;
                     position: relative;
                     z-index: 10;
 
                     @include breakpoint(769px up){
-                        flex-basis: 41%;
+                        flex-basis: 50%;
                         padding: 43px;
                         // margin: 0 auto;
                     }
                     h2{
+                        color: white;
                         margin-bottom: 15px;
+                        text-shadow: 1px 1px 0px black; 
                     }
                     h3{
+                        color: white;
                         font-family: font(script);
                         font-size: 39px;
+                        font-weight: 400;
                         margin-bottom: 15px;
+                        text-shadow: 1px 1px 0px black; 
+                    }
+                    p{
+                        color: white;
                     }
                 }
             }
@@ -1054,10 +1062,13 @@
                 position: relative;
                 text-align: center;
 
-                @include breakpoint(900px up){
-                    flex-basis: calc(33.3333333% - 11px);
+                @include breakpoint(950px up){
+                    flex-basis: calc(50% - 11px);
                     margin-bottom: 0;
                     max-width: 50%;
+                }
+                @include breakpoint(1420px up){
+                    flex-basis: calc(33.3333333% - 11px);
                 }
                 &:hover{
                     &.overlay{
@@ -1087,7 +1098,7 @@
                     transition: all 0.4s;
                     
                     @include breakpoint(769px up){
-                        padding: 52px;
+                        padding: 52px 20px;
                         top: 75%;
                     }
                     &:before{

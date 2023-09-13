@@ -12,7 +12,7 @@ section.flex-block.flex-home-services
 							a.button.button-ghost(
 								href="<?= get_sub_field('link')['url'] ?>" target="<?= get_sub_field('link')['target'] ?>" 
 								aria-label="<?= get_sub_field('background_image')['alt'] ?>") 
-									- echo get_sub_field('service')
+									- echo get_sub_field('link')['title']
 									//- |&nbsp;Services
 				- endwhile
 		- endif
