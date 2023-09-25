@@ -1,0 +1,37 @@
+//- Variables
+- $heading = get_sub_field('heading')
+
+section.flex-block.flex-blog-highlights.hrz-padding
+	.container.vert-padding
+		- if($heading) :
+			h2: - echo $heading
+		- endif
+
+		- $highlights = get_sub_field('blog_posts')
+		- if($highlights)
+			.blog-highlights-wrapper
+				- foreach($highlights as $post):
+					- setup_postdata($post)
+					.blog-highlight
+						aside(style="background-image: url('<?= get_the_post_thumbnail_url($post->ID);?>');")
+						section
+							h3: - echo $post->post_title
+							a.button.button-ghost(href="<?= get_the_permalink($post->ID);?>") Read More
+				- endforeach
+				- wp_reset_postdata()
+		- endif
+
+		- if (have_rows('accordion')) :
+			- $acc_num = 1
+			section.accordion
+				- while (have_rows('accordion')) : the_row()
+					.acc-tab(data-acc="<?php echo $acc_num;?>")
+						h3.acc-title(
+							class="<?php if($acc_num == 1){ echo 'active'; };?>")
+								- echo get_sub_field('title')
+						.accordion-content(
+							style="<?php if($acc_num == 1){ echo 'display: block;'; };?>")
+							- echo get_sub_field('content')
+					- $acc_num++
+				- endwhile
+		- endif

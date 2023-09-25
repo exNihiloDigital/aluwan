@@ -1,5 +1,5 @@
 - get_header()
-- if(get_field('footer_CTA', 'options') == "on"): 
+- if(get_field('footer_CTA', 'options') == "on" && is_front_page()): 
 	.footer-cta
 		section 
 			h2: - echo get_field('footer_cta_title', 'options')

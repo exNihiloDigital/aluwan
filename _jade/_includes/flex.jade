@@ -20,6 +20,7 @@
         - flexDarkCTA()
         - flexHomeServices()
         - flexImageContentList()
+        - flexBlogHighlights()
     - endwhile
 - endif
 
@@ -140,5 +141,11 @@
 - function flexImageContentList() {
     - if ( 'image_and_content_list' === get_row_layout() ) :;
         - get_template_part( 'includes/flex/flex', 'image-content-list');
+    - endif;
+- }
+
+- function flexBlogHighlights() {
+    - if ( 'blog_highlights' === get_row_layout() ) :;
+        - get_template_part( 'includes/flex/flex', 'blog-highlights');
     - endif;
 - }
