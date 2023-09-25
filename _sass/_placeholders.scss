@@ -42,12 +42,15 @@
     display: inline-block;
     margin: 0 auto 20px; 
     overflow: hidden;
-    padding: 5px 25px;
+    padding: 5px 15px;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
     transition: all 0.2s;
-
+    
+    @include breakpoint(769px up){
+        padding: 5px 25px;
+    }
     &:hover {
         background-color: color(medium);
         color: white;

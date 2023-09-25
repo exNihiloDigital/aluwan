@@ -1157,4 +1157,65 @@
             }
         }
     }
+    &.flex-blog-highlights{
+        .container-lg{
+            h2{
+                text-align: center;
+            }
+            .blog-highlights-wrapper{
+                position: relative;
+
+                .blog-highlight{
+                    display: inline-block;
+                    margin-bottom: 40px;
+                    position: relative;
+                    width: 100%;
+                    
+                    @include breakpoint(950px up){
+                        margin-bottom: 0;
+                        margin-right: 80px;
+                        width: 46%;
+                    }
+                    &:nth-child(even){
+                        float: right;
+                        
+                        @include breakpoint(950px up){
+                            margin-left: 80px;
+                            margin-right: 0;
+                            margin-top: -100px;
+                            margin-bottom: -100px;
+                        }
+                    }
+                    aside{
+                        background-position: center;
+                        background-size: cover;
+                        min-height: 300px;
+                    }
+                    section{
+                        background-color: color(light);
+                        padding: 20px;
+
+                        @include breakpoint(950px up){
+                            margin-top: -80px;
+                            padding: 30px;
+                            transform: translateX(40px);
+                        }
+                        h3{
+                            text-transform: uppercase;
+                        }
+                        a.button.button-ghost{
+                            border-color: color(one);
+                            color: color(one);
+                            margin-bottom: 0;
+
+                            &:hover{
+                                background-color: color(one);
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

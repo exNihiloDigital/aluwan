@@ -2,13 +2,13 @@
 - $heading = get_sub_field('heading')
 
 section.flex-block.flex-blog-highlights.hrz-padding
-	.container.vert-padding
+	.container-lg.vert-padding
 		- if($heading) :
 			h2: - echo $heading
 		- endif
 
 		- $highlights = get_sub_field('blog_posts')
-		- if($highlights)
+		- if($highlights): 
 			.blog-highlights-wrapper
 				- foreach($highlights as $post):
 					- setup_postdata($post)
@@ -19,6 +19,25 @@ section.flex-block.flex-blog-highlights.hrz-padding
 							a.button.button-ghost(href="<?= get_the_permalink($post->ID);?>") Read More
 				- endforeach
 				- wp_reset_postdata()
+		- else :
+			:php
+				$args = array(
+					'post_type' => 'post',
+					'posts_per_page' => 3
+				);
+
+			- $news_loop = new WP_Query($args)
+			- if ($news_loop -> have_posts()):
+				.blog-highlights-wrapper
+					- while ($news_loop -> have_posts()): $news_loop -> the_post()
+						.blog-highlight
+							aside(style="background-image: url('<?= get_the_post_thumbnail_url();?>');")
+							section
+								h3: - echo get_the_title()
+								a.button.button-ghost(href="<?= get_the_permalink();?>") Read More
+					- endwhile
+					- wp_reset_postdata()
+			-endif
 		- endif
 
 		- if (have_rows('accordion')) :
