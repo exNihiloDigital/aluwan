@@ -833,10 +833,14 @@
                 // }
                 .slide-content{
                     background-color: rgba(color(dark), 0.3);
-                    padding: 43px 20px;
+                    height: 100%;
+                    padding: 25% 20px;
                     position: relative;
                     z-index: 10;
-
+                    
+                    @include breakpoint(600px up){
+                        padding: 43px 20px;
+                    }
                     @include breakpoint(769px up){
                         flex-basis: 50%;
                         padding: 43px;

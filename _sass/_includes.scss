@@ -234,7 +234,7 @@ article {
     }
     .topbar {
         background-color: color(one);
-        padding: 15px 15px;
+        padding: 0px 15px 15px;
         position: relative;
         text-align: right;
 
@@ -243,11 +243,11 @@ article {
             height: 30px;
             left: 20px;
             position: absolute;
-            top: 15px; // must equal top padding of .topbar
+            top: -20px; // must equal top padding of .topbar
             z-index: 99999;
 
             img {
-                width: 151px;
+                width: 140px;
             }
         }
         .menu-icon {
