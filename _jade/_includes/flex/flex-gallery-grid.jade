@@ -14,7 +14,15 @@ section.flex-block.flex-gallery-grid.hrz-padding.bg-color-dark
 
 		- if (have_rows('gallery')) :
 			.gallery-grid
+				- if(get_sub_field('image_captions') == 'on'):
+					- $show_captions = true
+				- endif
 				- while (have_rows('gallery')) : the_row()
-					.gallery-img(aria-label="<?= get_sub_field('image')['alt']?>" style="background-image:url('<?= get_sub_field('image')['url']?>'); height: 400px;")
+					.gallery-img-wrapper
+						.gallery-img(aria-label="<?= get_sub_field('image')['alt']?>" style="background-image:url('<?= get_sub_field('image')['url']?>'); height: 400px;")
+						- if($show_captions) :
+							- $attachment_meta = wp_get_attachment($images['attachment_id']);
+							p: - echo $attachment_meta['caption']; ?>
+						- endif
 				- endwhile
 		- endif
