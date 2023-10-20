@@ -970,15 +970,16 @@
                 justify-content: center;
                 text-align: center;
 
-                .gallery-img{
-                    background-position: center;
-                    background-size: cover;
-                    flex: 100%;
-                    max-width: 100%;
-
+                .gallery-img-wrapper{
+                    flex-basis: 100%;
+                    
                     @include breakpoint(950px up){
-                        flex: calc(33% - 36px);
-                        max-width: calc(33% - 36px);
+                        flex-basis: calc(33% - 36px);
+                    }
+                    .gallery-img{
+                        background-position: center;
+                        background-size: cover;
+    
                     }
                 }
             }
