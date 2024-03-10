@@ -20,15 +20,33 @@
 footer.hrz-padding
 	.container
 		aside
-			.footer-logo
-				a(href="<?php echo esc_url( home_url('/') ) ;?>")
-					img(
-						src="<?= get_field('site_logo', 'options')['url'];?>" 
-						alt="<?= get_field('site_logo', 'options')['alt'];?>"
-						)
+			- if (have_rows('phone_numbers', 'options')) :
+				.footer-contact-wrapper
+					- while (have_rows('phone_numbers', 'options')) : the_row()
+						.footer-contact-block
+							- $phone_raw = get_sub_field('number')
+							- $phone = str_replace([" ", "(", ")", "-"], "", $phone_raw)
+							p: strong= get_sub_field('location')
+							a(href="tel:<?= $phone ?>" target="_blank")
+								- echo get_sub_field('number')
+					- endwhile
+			- endif
+		//- 	.footer-logo
+		//- 		a(href="<?php echo esc_url( home_url('/') ) ;?>")
+		//- 			img(
+		//- 				src="<?= get_field('site_logo', 'options')['url'];?>" 
+		//- 				alt="<?= get_field('site_logo', 'options')['alt'];?>"
+		//- 				)
 		section
-			- include('includes/social-links.php')
-			- include('includes/contact-info.php')
+			- if (have_rows('extra_buttons', 'options')) :
+				- while (have_rows('extra_buttons', 'options')) : the_row()
+					a.button.button-slide(href="<?= get_sub_field('footer_button')['url'];?>" target="<?= get_sub_field('footer_button')['target'];?>" aria-label="<?= get_sub_field('footer_button')['title'];?>") 
+						- echo get_sub_field('footer_button')['title']
+					br
+				- endwhile
+			- endif
+		//- 	- include('includes/social-links.php')
+		//- 	- include('includes/contact-info.php')
 
 	.copyright.container
 		section 

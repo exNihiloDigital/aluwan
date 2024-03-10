@@ -287,31 +287,84 @@ footer {
 
         aside {
             flex-basis: 100%;
+            margin-bottom: 20px;
             text-align: center;
-
-            @include breakpoint(769px up) { 
-                flex-basis: 50%;
+            
+            @include breakpoint(900px up) { 
+                flex-basis: 70%;
+                margin-bottom: 0;
                 text-align: left;
             }
             .footer-logo {
                 margin-bottom: 20px;
                 max-width: 400px;
             }
+            .footer-contact-wrapper{
+                border-radius: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                overflow: hidden;
+
+                @include breakpoint(1400px up){
+                    flex-wrap: nowrap;
+                }
+                .footer-contact-block{
+                    background-color: color(light);
+                    flex-basis: 100%;
+                    padding: 20px;
+                    text-align: center;
+
+                    @include breakpoint(769px up){
+                        flex-basis: 50%;
+                    }
+                    @include breakpoint(1000px up){
+                        flex-basis: 33.333%;
+                    }
+                    @include breakpoint(1400px up){
+                        flex-basis: 25%;
+                    }
+                    &:first-child{
+                        background-color: rgba(color(one), 1);
+                        color: white;
+
+                        p{
+                            border-color: white;
+                        }
+                        a{
+                            color: white;
+
+                            &:hover{
+                                color: color(medium);
+                            }
+                        }
+                    }
+                    p{
+                        border-bottom: 1px solid color(dark);
+                        font-size: 18px;
+                        line-height: 1em;
+                        margin: 0;
+                        padding-bottom: 5px;
+                        
+                        @include breakpoint(769px up){
+                            border-bottom: 2px solid color(dark);
+                        }
+                    }
+                    a{
+                        font-weight: 600;
+                    }
+                }
+            }
         }
         section {
             flex-basis: 100%;
             text-align: center;
 
-            @include breakpoint(769px up) {
-                flex-basis: 50%;
+            @include breakpoint(900px up) {
+                flex-basis: 30%;
                 text-align: right;
             }
             a {
-                color: color(one);
-
-                &:hover{
-                    color: color(two);
-                }
+                margin-bottom: 0;
             }
             .footer-menu {
                 margin-top: 20px;
