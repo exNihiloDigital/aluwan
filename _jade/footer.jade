@@ -38,6 +38,13 @@ footer.hrz-padding
 		//- 				alt="<?= get_field('site_logo', 'options')['alt'];?>"
 		//- 				)
 		section
+			- include('includes/social-links.php')
+			- if(get_field('email', 'options')) :
+				//- WISHLIST: find effective way to obscure emails
+				a.contact-email(href="mailto:<?= get_field('email', 'options') ?>" target="_blank") 
+					i.fa-solid.fa-envelope
+					- echo get_field('email', 'options')
+			- endif
 			- if (have_rows('extra_buttons', 'options')) :
 				- while (have_rows('extra_buttons', 'options')) : the_row()
 					a.button.button-slide(href="<?= get_sub_field('footer_button')['url'];?>" target="<?= get_sub_field('footer_button')['target'];?>" aria-label="<?= get_sub_field('footer_button')['title'];?>") 
@@ -45,8 +52,7 @@ footer.hrz-padding
 					br
 				- endwhile
 			- endif
-		//- 	- include('includes/social-links.php')
-		//- 	- include('includes/contact-info.php')
+			//- - include('includes/contact-info.php')
 
 	.copyright.container
 		section 

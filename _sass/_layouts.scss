@@ -303,6 +303,7 @@ footer {
                 border-radius: 10px;
                 display: flex;
                 flex-wrap: wrap;
+                margin-bottom: 20px;
                 overflow: hidden;
 
                 @include breakpoint(1400px up){
@@ -365,6 +366,22 @@ footer {
             }
             a {
                 margin-bottom: 0;
+            }
+            ul.social-links{
+                li{
+                    a{
+                        color: color(one);
+                    }
+                }
+            }
+            a.contact-email{
+                display: block;
+                line-height: 1em;
+                margin-bottom: 20px;
+
+                i{
+                    margin-right: 10px;
+                }
             }
             .footer-menu {
                 margin-top: 20px;
